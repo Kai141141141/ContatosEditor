@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dvgEdicao = new System.Windows.Forms.DataGridView();
             this.btnCadastroo = new System.Windows.Forms.Button();
             this.grbEditar = new System.Windows.Forms.GroupBox();
             this.BtnEditarr = new System.Windows.Forms.Button();
@@ -47,20 +47,22 @@
             this.txbNomeCad = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.gpbCadastro = new System.Windows.Forms.GroupBox();
-            this.txbDataCadastro = new System.Windows.Forms.TextBox();
+            this.dtpAniversario = new System.Windows.Forms.DateTimePicker();
             this.lblData = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgEdicao)).BeginInit();
             this.grbEditar.SuspendLayout();
             this.gpbCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dvgEdicao
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(268, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(356, 235);
-            this.dataGridView1.TabIndex = 0;
+            this.dvgEdicao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgEdicao.Location = new System.Drawing.Point(268, 12);
+            this.dvgEdicao.Name = "dvgEdicao";
+            this.dvgEdicao.Size = new System.Drawing.Size(356, 235);
+            this.dvgEdicao.TabIndex = 0;
+            this.dvgEdicao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEdicao_CellClick_1);
+            this.dvgEdicao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnCadastroo
             // 
@@ -175,6 +177,7 @@
             this.txbTelCadastro.Name = "txbTelCadastro";
             this.txbTelCadastro.Size = new System.Drawing.Size(133, 20);
             this.txbTelCadastro.TabIndex = 12;
+            this.txbTelCadastro.TextChanged += new System.EventHandler(this.txbTelCadastro_TextChanged);
             // 
             // lblSenhaCad
             // 
@@ -219,7 +222,7 @@
             // 
             // gpbCadastro
             // 
-            this.gpbCadastro.Controls.Add(this.txbDataCadastro);
+            this.gpbCadastro.Controls.Add(this.dtpAniversario);
             this.gpbCadastro.Controls.Add(this.btnCadastroo);
             this.gpbCadastro.Controls.Add(this.lblData);
             this.gpbCadastro.Controls.Add(this.lblNome);
@@ -235,12 +238,13 @@
             this.gpbCadastro.TabStop = false;
             this.gpbCadastro.Text = "Cadastro";
             // 
-            // txbDataCadastro
+            // dtpAniversario
             // 
-            this.txbDataCadastro.Location = new System.Drawing.Point(94, 103);
-            this.txbDataCadastro.Name = "txbDataCadastro";
-            this.txbDataCadastro.Size = new System.Drawing.Size(131, 20);
-            this.txbDataCadastro.TabIndex = 14;
+            this.dtpAniversario.Location = new System.Drawing.Point(94, 106);
+            this.dtpAniversario.Name = "dtpAniversario";
+            this.dtpAniversario.Size = new System.Drawing.Size(124, 20);
+            this.dtpAniversario.TabIndex = 14;
+            this.dtpAniversario.ValueChanged += new System.EventHandler(this.dtpAniversario_ValueChanged);
             // 
             // lblData
             // 
@@ -257,9 +261,10 @@
             this.Controls.Add(this.gpbCadastro);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.grbEditar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dvgEdicao);
             this.Name = "Edicao";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Edicao_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgEdicao)).EndInit();
             this.grbEditar.ResumeLayout(false);
             this.grbEditar.PerformLayout();
             this.gpbCadastro.ResumeLayout(false);
@@ -290,7 +295,7 @@
         private System.Windows.Forms.Label lblNomeCada;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblDataNiverCadas;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dvgEdicao;
         private System.Windows.Forms.Button btnCadastroo;
         private System.Windows.Forms.GroupBox grbEditar;
         private System.Windows.Forms.Label label2;
@@ -308,8 +313,8 @@
         private System.Windows.Forms.TextBox txbNomeCad;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.GroupBox gpbCadastro;
-        private System.Windows.Forms.TextBox txbDataCadastro;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Button BtnEditarr;
+        private System.Windows.Forms.DateTimePicker dtpAniversario;
     }
 }
